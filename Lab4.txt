@@ -1,0 +1,95 @@
+Task 1:
+#include <iostream>
+#include <string>
+using namespace std;
+
+class Car {
+	string brand;
+	string model;
+	float rentalPrice;
+	int available;
+	
+	public:
+		Car(){
+			brand = "Unknown";
+			model = "Generic";
+			rentalPrice = 0.0;
+			available = 1;
+		}
+		Car(string b,string m,float rP, int av){
+			brand = b;
+			model = m;
+			rentalPrice = rP;
+			available = av;
+		}
+		void rentalRequest(int request){
+			if(request == available){
+				cout<<"Car is succesfully rented"<<endl;
+				available = 0;
+			}
+			else{
+				cout<<"car is Not available to rent";
+			}
+		}
+		
+};
+int main(){
+	Car c("Toyota","Sedan",12.5,1);
+	
+	c.rentalRequest(1);
+	
+	
+	return 0;
+}
+Task 2:
+#include <iostream>
+#include <string>
+using namespace std;
+
+class Car {
+	string brand;
+	string model;
+	float rentalPrice;
+	int available;
+	
+	public:
+		
+		Car(){
+			brand = "Unknown";
+			model = "Generic";
+			rentalPrice = 0.0;
+			available = 1;
+		}
+		Car(string b,string m,float rP, int av){
+			brand = b;
+			model = m;
+			rentalPrice = rP;
+			available = av;
+		}
+		void rentalRequest(int request,int daysRent){
+			if(request == available && daysRent>5){
+					
+				cout<<"Car is succesfully rented"<<endl;
+				rentalPrice = rentalPrice - 0.05 * rentalPrice;
+				cout<<"You got 5% discount as you have rented for more than 5 days";
+				cout<<"\nYour price is "<<rentalPrice;
+				available = 0;
+			}
+			else if (request == available && daysRent > 10){
+				cout<<"Car is succesfully rented"<<endl;
+				rentalPrice = rentalPrice - 0.10 * rentalPrice;
+				cout<<"You got 10% discount as you have rented for more than 10 days";
+				cout<<"\nYour price is "<<rentalPrice;
+				available = 0;
+			}
+			else {
+				cout<<"car is Not available to rent";
+			}
+		
+};
+int main(){
+	Car c("Toyota","Sedan",12.5,1);
+	c.rentalRequest(1,10);
+
+	return 0;
+}
