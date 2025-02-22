@@ -46,7 +46,7 @@ public:
             rentalPrice = rentalPrice - (0.10 * rentalPrice);
             cout<<"Car is successfully rented. You got a 10% discount for renting for more than 10 days.";
             cout<<"Final price: Rs "<<rentalPrice;;
-        } else if (days > 5) {
+        } else if (days > 5 && days <= 10) {
             available = false;
             rentalPrice = rentalPrice - (0.05 * rentalPrice);
             cout<<"Car is successfully rented. You got a 5% discount for renting for more than 5 days.";
