@@ -1,0 +1,2 @@
+Sensor 1: Temperature = 25.3 C
+Sensor 2: Temperature = 26.1 C
